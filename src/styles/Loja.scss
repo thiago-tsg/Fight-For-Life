@@ -1,0 +1,205 @@
+@import "../styles/Index.scss";
+
+.loja {
+
+  // estrutura principal da loja, com sidebar e conteúdo
+  .sidebar {
+    position: sticky;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+
+    .titulo {
+      color: $primary;
+    }
+
+    .category-name {
+      padding: .5rem 0;
+      cursor: pointer;
+      position: relative;
+      transition: 0.3s;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.open {
+        color: $primary;
+        font-weight: 700;
+      }
+    }
+
+    .subcategory-item {
+      padding: .3rem 0 .3rem .5rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $primary;
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  // conteúdo principal da loja, onde ficam os produtos
+  .loja-content {
+    flex: 1;
+
+    .product-list {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+
+  // card de cada produto, com imagem, nome, preço e botões
+  .product-card {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($primary, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.35s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+
+      border-color: rgba($primary, 0.6);
+
+      box-shadow: 0 0 25px rgba($primary, 0.15);
+
+      .product-image {
+        transform: scale(1.05);
+      }
+    }
+
+    .c-img-product {
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .titulo,
+    .preco,
+    .buttons {
+      padding: 0 1rem;
+    }
+
+    .titulo {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      min-height: 3rem;
+    }
+
+    .preco {
+      color: $primary;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .buttons {
+      padding-bottom: 1rem;
+
+      .btn-product {
+        flex: 1;
+        padding: 0.8rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+        background: transparent;
+        border: 1px solid #444;
+        color: white;
+
+        &:hover {
+          border-color: $primary;
+          color: $primary;
+        }
+
+        &.btn-details {
+          border-color: $primary;
+          color: $primary;
+
+          &:hover {
+            background: rgba($primary, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .loja {
+    flex-direction: column;
+
+    .sidebar {
+      width: 100%;
+      min-width: auto;
+      position: static;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .loja {
+    padding: 2rem 0;
+
+    .sidebar {
+      overflow-x: auto;
+      white-space: nowrap;
+
+      padding: 1rem;
+
+      .titulo {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .category-name {
+        font-size: 0.95rem;
+      }
+
+      .subcategory-item {
+        font-size: 0.85rem;
+      }
+    }
+
+    .loja-content {
+      .product-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    .product-card {
+      border-radius: 18px;
+
+      .product-image {
+        height: 180px;
+      }
+
+      .titulo {
+        font-size: 0.9rem;
+        min-height: 40px;
+      }
+
+      .preco {
+        font-size: 1.2rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+
+        .btn-product {
+          width: 100%;
+          padding: 0.6rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+@import "./Index.scss";
+
+/* AvaliacaoGrauKids.scss */
+$azul: #3498db;
+$vermelho: #e74c3c;
+$amarelo: #f1c40f;
+$verde: #2ecc71;
+$cinza-claro: #b5bbbd91;
+$cinza-escuro: #161818;
+$branco: #fff;
+$transicao: 0.3s ease;
+
+.cg-avaliacao-kids {
+  .cg-wizard {
+    background: rgba(255, 255, 255, 0.08); // bem suave
+    backdrop-filter: blur(20px); // desfoque mais forte
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25); // borda vidro
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); // sombra para destacar
+
+    padding: 2rem;
+    border-radius: 1rem;
+
+    .cg-title {
+      margin-bottom: 1rem;
+    }
+
+    //Barra de processo
+    .cg-progress-bar {
+      width: 100%;
+      height: 1rem;
+      background: $cinza-claro;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      .cg-progress {
+        height: 100%;
+        background: $verde;
+        width: 0;
+        transition: width $transicao;
+      }
+    }
+
+    //Indicador de cores
+    .cg-steps-indicator {
+      margin-bottom: 2rem;
+
+      .cg-step {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $cinza-claro;
+        &.active {
+          transform: scale(1.3);
+        }
+        &.cor-azul {
+          background: $azul;
+        }
+        &.cor-vermelho {
+          background: $vermelho;
+        }
+        &.cor-amarelo {
+          background: $amarelo;
+        }
+        &.cor-verde {
+          background: $verde;
+        }
+        transition: all $transicao;
+      }
+    }
+
+    //Formulário passo a passo
+    .cg-card {
+      background: $cinza-claro;
+      padding: 2rem;
+      border-radius: 1rem;
+      opacity: 1;
+      transition: opacity $transicao;
+
+      &.fade {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .cg-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $tertiary;
+      }
+
+      .cg-label {
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+
+        .cg-input {
+          margin-top: 0.5rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid $cinza-escuro;
+          font-size: 1rem;
+        }
+      }
+
+      .cg-question {
+        margin-bottom: 1.5rem;
+
+        .cg-question-text {
+          margin-bottom: 0.5rem;
+          color: $tertiary;
+        }
+
+        .cg-select {
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid $cinza-escuro;
+          width: 100%;
+          font-size: 1rem;
+          transition: border $transicao;
+
+          &:focus {
+            outline: none;
+            border-color: $azul;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .cg-nav {
+        margin-top: 1rem;
+      }
+
+      &.cg-result {
+        text-align: center;
+
+        .cg-result-item {
+          font-size: 1.2rem;
+          margin: 0.5rem 0;
+        }
+      }
+
+      &.cor-azul {
+        border-left: 5px solid $azul;
+      }
+      &.cor-vermelho {
+        border-left: 5px solid $vermelho;
+      }
+      &.cor-amarelo {
+        border-left: 5px solid $amarelo;
+      }
+      &.cor-verde {
+        border-left: 5px solid $verde;
+      }
+    }
+
+    //Geral
+    .cg-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition:
+        background $transicao,
+        transform $transicao;
+
+      &.cg-btn-next {
+        background: $azul;
+        color: $branco;
+      }
+      &.cg-btn-back {
+        background: $cinza-escuro;
+        color: $branco;
+      }
+      &.cg-btn-send {
+        background: $verde;
+        color: $branco;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cg-avaliacao-kids {
+    padding: 1rem;
+
+    .cg-wizard {
+      padding: 1rem;
+    }
+  }
+}

@@ -1,0 +1,453 @@
+@import "../styles/Index.scss";
+
+/* ==========================================
+   BACKDROP
+========================================== */
+
+.MuiBackdrop-root {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.MuiModal-root {
+  padding: 2rem !important;
+
+  .MuiBox-root {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 30px;
+
+    padding: 2rem;
+
+    overflow-y: auto;
+
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+
+    .header-modal-product {
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .titulo {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .fechar {
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+
+        transition: 0.3s;
+
+        &:hover {
+          background: $primary;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+.product-modal {
+  align-items: flex-start;
+}
+
+/* ==========================================
+   GALERIA
+========================================== */
+
+.cg-img-product-modal {
+  width: 100%;
+
+  .c-img-principal-modal {
+    width: 100%;
+    max-width: 550px;
+
+    overflow: hidden;
+    border-radius: 24px;
+
+    background: #111;
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+  }
+
+  .thumbnail-carousel {
+    margin-top: 1rem;
+
+    #thumb-scroll {
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      img {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 12px;
+
+        object-fit: cover;
+
+        cursor: pointer;
+
+        border: 2px solid transparent;
+
+        transition: 0.3s;
+
+        &:hover {
+          border-color: $primary;
+          transform: translateY(-3px);
+        }
+      }
+    }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      color: white;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      &:hover {
+        background: $primary;
+        color: #000;
+      }
+    }
+  }
+}
+
+/* ==========================================
+   INFORMAÇÕES
+========================================== */
+
+.cg-info-product-modal {
+  height: 100%;
+
+  .product-tag {
+    width: fit-content;
+
+    background: rgba($primary, 0.12);
+
+    color: $primary;
+
+    border: 1px solid rgba($primary, 0.35);
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+  }
+
+  .price-area {
+    .oldPrice {
+      color: #777;
+      font-size: 1rem;
+      text-decoration: line-through;
+    }
+
+    .price {
+      color: $primary;
+
+      font-size: 3.5rem !important;
+      font-weight: 800 !important;
+
+      line-height: 1;
+
+      text-shadow: 0 0 15px rgba($primary, 0.3);
+    }
+  }
+
+  .info-section {
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    &:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .caracteristicas {
+      display: block;
+
+      color: $primary;
+
+      font-size: 0.85rem;
+      font-weight: 700;
+
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .MuiTypography-root {
+      color: #d4d4d4;
+      line-height: 1.7;
+    }
+  }
+
+  /* CORES */
+
+  .product-colors {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .color-btn {
+      width: 34px !important;
+      height: 34px !important;
+
+      border-radius: 50%;
+
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &.selected {
+        transform: scale(1.2);
+
+        box-shadow: 0 0 15px rgba($primary, 0.8);
+      }
+    }
+  }
+
+  /* TAMANHOS */
+
+  .product-sizes {
+    display: flex;
+    flex-wrap: wrap;
+
+    .size-btn {
+      padding: 0.7rem 1rem;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      color: white;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      &:hover {
+        border-color: $primary;
+      }
+
+      &.selected {
+        background: $primary;
+
+        color: #000;
+
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* COMPARTILHAR */
+
+  .compartilhar {
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    align-items: center;
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      .btn-product-rede-sociais {
+        width: 45px;
+        height: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 12px;
+
+        transition: 0.3s;
+
+        &:hover {
+          border-color: $primary;
+          transform: translateY(-3px);
+        }
+
+        img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+
+  /* QUANTIDADE */
+
+  .quantity-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      button {
+        width: 40px;
+        height: 40px;
+
+        border: none;
+        border-radius: 10px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        color: white;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        &:hover {
+          background: $primary;
+          color: #000;
+        }
+      }
+
+      span {
+        min-width: 30px;
+
+        text-align: center;
+
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* CTA */
+
+  .btn {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 1rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    border-radius: 14px;
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+
+      box-shadow: 0 0 25px rgba($primary, 0.35);
+    }
+  }
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 992px) {
+  .MuiModal-root {
+    padding: 1rem !important;
+
+    .MuiBox-root {
+      padding: 1.5rem;
+    }
+  }
+
+  .product-modal {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cg-img-product-modal {
+    .c-img-principal-modal {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cg-info-product-modal {
+    .price-area {
+      .price {
+        font-size: 2.5rem !important;
+      }
+    }
+  }
+
+  .thumbnail-carousel {
+    .arrow {
+      display: none;
+    }
+  }
+
+  .quantity-selector {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .compartilhar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

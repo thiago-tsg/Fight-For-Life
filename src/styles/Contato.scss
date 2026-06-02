@@ -1,0 +1,171 @@
+@import "../styles/Index.scss";
+
+.contato {
+  .contato-header {
+    padding-bottom: 3rem;
+
+    span {
+      color: $primary;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    h2 {
+      padding-top: 1rem;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    p {
+      padding-top: 1rem;
+    }
+  }
+
+  .contato-content {
+    grid-template-columns: 1.5fr 1fr;
+    padding-bottom: 4rem;
+
+    .cg-form,
+    .contato-info {
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba($primary, 0.25);
+      border-radius: 24px;
+
+      padding: 2rem;
+    }
+
+    .cg-form {
+      h3 {
+        padding-bottom: 2rem;
+      }
+
+      .contato-form {
+        input,
+        textarea {
+          width: 100%;
+          padding: 1rem 1.2rem;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 12px;
+          font-size: 1rem;
+          resize: none;
+          transition: 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: $primary;
+            box-shadow: 0 0 15px rgba($primary, 0.3);
+          }
+        }
+      }
+    }
+
+    .contato-info {
+      justify-content: space-between;
+
+      h3 {
+        padding-bottom: 2rem;
+      }
+
+      .info-detalhes {
+        strong {
+          color: $primary;
+          display: block;
+          padding-bottom: 0.4rem;
+        }
+
+        .andress,
+        .tel,
+        .email {
+          color: #fff;
+        }
+      }
+
+      .redes-sociais {
+        padding-top: 2rem;
+
+        h4 {
+          padding-bottom: 1rem;
+        }
+
+        div {
+          a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            transition: 0.3s;
+
+            &:hover {
+              transform: translateY(-4px);
+              border: 1px solid $primary;
+            }
+
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mapa-contato {
+    h3 {
+      padding-bottom: 2rem;
+    }
+
+    iframe {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba($primary, 0.3);
+      box-shadow: 0 0 30px rgba($primary, 0.15);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .contato {
+    .contato-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contato {
+    padding: 3rem 0;
+
+    .contato-header {
+      margin-bottom: 2rem;
+    }
+
+    .contato-content {
+      .cg-form,
+      .contato-info {
+        padding: 1.5rem;
+      }
+
+      .contato-info {
+        text-align: center;
+
+        .redes-sociais {
+          div {
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .mapa-contato {
+      iframe {
+        height: 350px;
+      }
+    }
+  }
+}

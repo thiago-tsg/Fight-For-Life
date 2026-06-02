@@ -1,0 +1,150 @@
+@import "../styles/Index.scss";
+
+.planos {
+
+  .plano-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+
+      border-color: rgba($primary, 0.8);
+
+      box-shadow: 0 0 30px rgba($primary, 0.2);
+    }
+
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+
+      background: $primary;
+      color: #000;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+    }
+
+    h2 {
+      padding-bottom: 1rem;
+    }
+
+    .preco {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: $primary;
+      padding-bottom: 2rem;
+    }
+
+    .beneficios {
+      padding-bottom: 2rem;
+
+      li {
+        align-items: center;
+
+        span {
+          color: $primary;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .header-planos {
+    padding-bottom: 2rem;
+
+    span {
+      color: $primary;
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    h1 {
+      padding: 1rem 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+  }
+
+  .planos-swiper {
+    padding: 1rem 0 4rem;
+
+    .swiper-pagination-bullet {
+      background: white;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $primary;
+    }
+  }
+
+  .destaque {
+    border: 2px solid $primary;
+    box-shadow: 0 0 35px rgba($primary, 0.25);
+  }
+
+  .garantias {
+    padding-top: 4rem;
+
+    .garantia {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba($primary, 0.15);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $primary;
+      }
+
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .observacao {
+    padding-top: 3rem;
+    line-height: 1.8;
+    color: white;
+
+    strong {
+      color: $primary;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .planos {
+    .garantias {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .planos {
+    padding: 3rem 0;
+
+    .garantias {
+      grid-template-columns: 1fr;
+    }
+
+    .plano-card {
+      max-width: 320px;
+    }
+  }
+}

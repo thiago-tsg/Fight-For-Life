@@ -1,0 +1,1078 @@
+export const productsData = {
+  Kimonos: [
+    {
+      name: "Kimono Azul",
+      price: 1,
+      oldPrice: 250,
+      img: "/loja/kimono-azul.jpg",
+      extraImages: ["/loja/kimono-azul2.jpg"],
+      features:
+        "Tecido trançado premium, costuras reforçadas, leve e resistente.",
+      notes:
+        "Ideal tanto para treinos quanto competições. Encolhimento mínimo.",
+      colors: ["Azul"],
+      sizes: ["A1", "A2", "A3", "A4", "A5"],
+    },
+    {
+      name: "Kimono Branco",
+      price: 180,
+      oldPrice: 250,
+      img: "/loja/kimono-branco.jpg",
+      extraImages: [
+        "/loja/kimono-branco.jpg",
+        "/loja/kimono-branco.jpg",
+        "/loja/kimono-branco.jpg",
+        "/loja/kimono-branco.jpg",
+      ],
+      features: "Tecido leve de algodão, altamente respirável.",
+      notes: "Excelente para iniciantes pela leveza e conforto.",
+      colors: ["Branco"],
+      sizes: ["A1", "A2", "A3", "A4", "A5"],
+      materials: "100% Algodão",
+      tag: "Mais Vendido",
+    },
+    {
+      name: "Kimono Preto",
+      price: 180,
+      img: "/loja/kimono-preto.jpg",
+      extraImages: ["/loja/kimono-preto2.jpg"],
+      features: "Fabricado com tecido grosso, ideal para treinos intensos.",
+      notes:
+        "Modelo muito resistente. Pode encolher até 2% na primeira lavagem.",
+      colors: ["Preto"],
+      sizes: ["A1", "A2", "A3", "A4", "A5"],
+    },
+    {
+      name: "Kimono Rosa",
+      price: 180,
+      img: "/loja/kimono-rosa.jpg",
+      extraImages: ["/loja/kimono-rosa2.jpg"],
+      features: "Modelagem anatômica feminina, tecido suave na pele.",
+      notes: "Modelo exclusivo. Limitado.",
+      colors: ["Rosa"],
+      sizes: ["A1", "A2", "A3", "A4", "A5"],
+    },
+  ],
+
+  "Protetor Bucal": [
+    {
+      name: "Protetor Bucal Gel",
+      price: 30,
+      img: "/loja/protetor-bocal-preto.jpg",
+      extraImages: ["/loja/protetor-bocal-preto2.jpg"],
+      features: "Dupla camada de proteção, formato anatômico.",
+      notes: "Acompanha caixa protetora.",
+    },
+    {
+      name: "Protetor Bucal Gel Roxo",
+      price: 30,
+      img: "/loja/protetor-bocal-roxo.jpg",
+      extraImages: ["/loja/protetor-bocal-roxo2.jpg"],
+      features: "Alto conforto, gel interno moldável.",
+      notes: "Recomendado para treinos de alta intensidade.",
+    },
+  ],
+
+  "Rash Guard": [
+    {
+      name: "Rash Guard Manga Longa",
+      price: 120,
+      img: "/loja/rash-brasil.jpg",
+      extraImages: ["/loja/rash-brasil2.jpg"],
+      features: "Proteção UV, compressão muscular, tecido dry fit.",
+      notes: "Não desbota com lavagens.",
+    },
+    {
+      name: "Rash Guard Manga Curta Japão",
+      price: 120,
+      img: "/loja/rash-dragao.jpg",
+      extraImages: ["/loja/rash-dragao2.jpg"],
+      features: "Altamente flexível, costura flat seam anti atrito.",
+      notes: "Design premium com tinta digital.",
+    },
+    {
+      name: "Rash Guard Manga Curta Urso",
+      price: 120,
+      img: "/loja/rash-japao.jpg",
+      extraImages: ["/loja/rash-japao2.jpg"],
+      features: "Excelente compressão e liberdade de movimento.",
+      notes: "Ideal para Jiu-Jitsu No-Gi.",
+    },
+  ],
+
+  Luvas: [
+    {
+      name: "Luvas Muay Thai 12oz",
+      price: 150,
+      img: "/loja/luva-boxe-azul.jpg",
+      extraImages: ["/loja/luva-boxe-azul2.jpg"],
+      features: "Espuma multicamadas, proteção no punho.",
+      notes: "Ideal para treinos de sparring.",
+    },
+    {
+      name: "Luvas Boxe 10oz",
+      price: 120,
+      img: "/loja/luva-boxe-preta.jpg",
+      extraImages: ["/loja/luva-boxe-preta2.jpg"],
+      features: "Leves, perfeitas para treinos de manopla.",
+      notes: "Tamanho recomendado para velocidades rápidas.",
+    },
+    {
+      name: "Luvas Boxe 10oz Vermelha",
+      price: 120,
+      img: "/loja/luva-boxe-vermelha.jpg",
+      extraImages: ["/loja/luva-boxe-vermelha2.jpg"],
+      features: "Material sintético premium, ventilação interna.",
+      notes: "Excelente custo-benefício.",
+    },
+  ],
+
+  Caneleiras: [
+    {
+      name: "Caneleira Muay Thai Azul",
+      price: 80,
+      img: "/loja/caneleira-branca.jpg",
+      extraImages: ["/loja/caneleira-branca2.jpg"],
+      features: "Alta absorção de impacto, velcro duplo.",
+      notes: "Muito confortável para treinos longos.",
+    },
+    {
+      name: "Caneleira Muay Thai Preta",
+      price: 80,
+      img: "/loja/caneleira-horus.jpg",
+      extraImages: ["/loja/caneleira-horus2.jpg"],
+      features: "Espuma densa, boa cobertura da canela e pé.",
+      notes: "Ideal para iniciantes e intermediários.",
+    },
+    {
+      name: "Caneleira Muay Thai Preta",
+      price: 80,
+      img: "/loja/caneleira-preta.jpg",
+      extraImages: ["/loja/caneleira-preta2.jpg"],
+      features: "Modelo anatômico, firme na perna.",
+      notes: "Acompanha elástico reforçado.",
+    },
+  ],
+
+  Cotoveleiras: [
+    {
+      name: "Cotoveleira de Proteção",
+      price: 60,
+      img: "/loja/cotoveleira-preta.jpg",
+      extraImages: ["/loja/cotoveleira-preta2.jpg"],
+      features: "Espuma alta densidade, ajuste confortável.",
+      notes: "Muito usada em Muay Thai.",
+    },
+    {
+      name: "Cotoveleira de Proteção",
+      price: 60,
+      img: "/loja/cotoveleira-preta2.jpg",
+      extraImages: ["/loja/cotoveleira-preta3.jpg"],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+    },
+  ],
+
+  Camisas: [
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/fight-for-life-amarela-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Código de Barras",
+      price: 119,
+      img: "/loja/camisas/codigo-de-barras-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Gorila Xadrez",
+      price: 119,
+      img: "/loja/camisas/gorila-xadrez-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Let's Go Jiu-Jitsu",
+      price: 119,
+      img: "/loja/camisas/lets-go-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Lutador de Sumo",
+      price: 119,
+      img: "/loja/camisas/lutador-sumo-estrangulamento-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Oni",
+      price: 119,
+      img: "/loja/camisas/oni-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Peças de Xadrez",
+      price: 119,
+      img: "/loja/camisas/pecas-xadrez-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-jiu-jitsu-faixa-preta.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-dois-chipanzes.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-patrick.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-brazilian-jiujitsu-rock.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-bicho-preguica.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-mma.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-tubarao-faixas.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-tabuleiro-xadrez.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-steet-fighter.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-nba-lutador.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-maos-estouradas-cumprimentando.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-rosto-chipanze.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-pecas-xadrez.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-no-gi.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-maos-cumprimentando.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-chipanze-cumprimentando.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-teste-ocular-bjj.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-pontuacao.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-stitch.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-darce-wader.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-groot.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-fight-curvado-lutadores-armlock.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-chipanze-cor-faixa.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-faixas-animais.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-leao-faixas.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-cor-faixas-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+    {
+      name: "Camisa Fight For Life",
+      price: 119,
+      img: "/loja/camisas/camisa-frente-logo-4f-amarelo.webp",
+      extraImages: [
+        "/loja/camisas/fight-for-life-amarela-costa-jiu-jitsu.webp",
+      ],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+      sizes: ["P", "M", "G", "GG"],
+      colors: ["Preto", "Branco", "Verde", "Cinza"],
+    },
+  ],
+
+  Bonés: [
+    {
+      name: "Boné de Redinha Fight For Life Logo Amarelo",
+      price: 150,
+      img: "/loja/bone/bone-fight-for-life-frente.webp",
+      extraImages: [
+        "/loja/bone/bone-fight-for-life-frente-costa.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Peças de Xadrez",
+      price: 150,
+      img: "/loja/bone/bone-redinha-peca-xadrez.webp",
+      extraImages: [
+        "/loja/bone/bone-frente-costa-peca-xadrez.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Patrick Malahndo",
+      price: 150,
+      img: "/loja/bone/bone-redinha-patrick.webp",
+      extraImages: [
+        "/loja/bone/bone-frente-costa-patrick.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Jiu-Jitsu Mãos Remendadas",
+      price: 150,
+      img: "/loja/bone/bone-redinha-mao-comprimento-ossos.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-mao-comprimento-ossos.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Street Fighter",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-street-fighter.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-street-fighter.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Tabuleiro de Xadrez",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-tabuleiro-xadrez.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-tabuleiro-xadrez.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Embolo de posições",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-embolo.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-embolo.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Brazilian Jiu-Jitsu",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-brazilian-jiu-jitsu-1.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-brazilian-jiu-jitsu-1.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Brazilian Jiu Jitsu GTA",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-brazilian-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-brazilian-jiu-jitsu.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha No Gi No Problem",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-no-gi-no-problem.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-no-gi-no-problem.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha MMA",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-mma.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-mma.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Berimbolo",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-berimbolo.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-berimbolo.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Cara de Chimpanzé",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-cara-macaco.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-cara-macaco.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Macaco cumprimentando",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-macaco-arminha.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-macaco-arminha.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha NBA Lutador",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-nba.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-nba.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Jiu Jitsu Faixa Preta",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-jiu-jitsu.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-jiu-jitsu.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Bixo Preguiça Faixa Preta",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-preguica-faixa-preta.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-preguica-faixa-preta.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Red Bull Combate",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-red-bull.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-red-bull.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Mãos se Cumprimentando",
+      price: 150,
+      img: "/loja/bone/bene-redinha-frente-cumprimento.webp",
+      extraImages: [
+        "/loja/bone/bene-redinha-frente-costa-cumprimento.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Tubarão Feito de Faixas",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-tuberao.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-tuberao.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Macaco Jogando Xadrez",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-macaco-xadrez.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-macaco-xadrez.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Dois Chimpanzés",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-dois-chipamze.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-dois-chipamze.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Mata Leão Simba",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-mata-leao-simba.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-mata-leao-simba.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+    {
+      name: "Boné de Redinha Mãos Dividindo o 'Suco'",
+      price: 150,
+      img: "/loja/bone/bone-redinha-frente-maos-testo.webp",
+      extraImages: [
+        "/loja/bone/bone-redinha-frente-costa-maos-testo.webp",
+        "/loja/bone/bone-redinha-costa.webp",
+      ],
+      features: [
+        "Estrutura leve e ventilada com redinha traseira",
+        "Espuma de alta qualidade para maior conforto",
+        "Aba curva e logo Fight For Life em destaque",
+      ],
+      notes: [
+        "Ideal para treinos, uso casual e estilo esportivo",
+        "Ajuste traseiro para diversos tamanhos",
+      ],
+    },
+  ],
+
+  Shorts: [
+    {
+      name: "Camisa Dry Fit Treino",
+      price: 80,
+      img: "/loja/camisa-xadrez-frente.jpg",
+      extraImages: ["/loja/camisa-xadrez-frente.jpg"],
+      features: "Espuma alta densidade, ajuste confortável.",
+      notes: "Muito usada em Muay Thai.",
+    },
+    {
+      name: "Camisa Dry Fit Casual",
+      price: 80,
+      img: "/loja/camisa-xadrez-costa.jpg",
+      extraImages: ["/loja/camisa-xadrez-frente.jpg"],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+    },
+  ],
+
+  Blusas: [
+    {
+      name: "Camisa Dry Fit Treino",
+      price: 80,
+      img: "/loja/camisa-xadrez-frente.jpg",
+      extraImages: ["/loja/camisa-xadrez-frente.jpg"],
+      features: "Espuma alta densidade, ajuste confortável.",
+      notes: "Muito usada em Muay Thai.",
+    },
+    {
+      name: "Camisa Dry Fit Casual",
+      price: 80,
+      img: "/loja/camisa-xadrez-costa.jpg",
+      extraImages: ["/loja/camisa-xadrez-frente.jpg"],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+    },
+  ],
+
+  Calças: [
+    {
+      name: "Cotoveleira de Proteção",
+      price: 60,
+      img: "/loja/cotoveleira-preta.jpg",
+      extraImages: ["/loja/cotoveleira-preta2.jpg"],
+      features: "Espuma alta densidade, ajuste confortável.",
+      notes: "Muito usada em Muay Thai.",
+    },
+    {
+      name: "Cotoveleira de Proteção",
+      price: 60,
+      img: "/loja/cotoveleira-preta2.jpg",
+      extraImages: ["/loja/cotoveleira-preta3.jpg"],
+      features: "Proteção lateral reforçada.",
+      notes: "Modelo nível profissional.",
+    },
+  ],
+};
