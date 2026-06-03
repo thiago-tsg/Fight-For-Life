@@ -1,15 +1,32 @@
 import "../../styles/Checkout.scss";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { initMercadoPago, CardPayment } from "@mercadopago/sdk-react";
+import { useAuth } from "../../firebase/AuthContext";
+import { useCart } from "../Loja/CartContext";
 
 initMercadoPago(import.meta.env.VITE_MP_PUBLIC_KEY);
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
+
+const statusMessages = {
+  approved: "Pagamento aprovado!",
+  rejected: "Pagamento recusado!",
+  cancelled: "Pagamento cancelado!",
+  pending: "Pagamento pendente. Aguardando confirmação.",
+  in_process: "Pagamento aguardando confirmação do banco.",
+};
+
 const Checkout = () => {
   const { state } = useLocation();
-  const cartItems = state?.cartItems || [];
+  const { user } = useAuth();
+  const { clearCart } = useCart();
+  const cartItems = useMemo(() => state?.cartItems || [], [state?.cartItems]);
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce(
+    (acc, item) => acc + Number(item.price) * Number(item.quantity),
+    0
+  );
 
   const [method, setMethod] = useState("card");
   const [pixData, setPixData] = useState(null);
@@ -19,92 +36,115 @@ const Checkout = () => {
   const [paymentDone, setPaymentDone] = useState(false);
   const [paymentFailed, setPaymentFailed] = useState(false);
   const [currentPaymentId, setCurrentPaymentId] = useState(null);
+  const [paidCartCleared, setPaidCartCleared] = useState(false);
+
+  const applyPaymentStatus = useCallback((data, eventSource) => {
+    if (!data?.status) return;
+
+    setStatusMessage(statusMessages[data.status] || "Status de pagamento atualizado.");
+
+    if (data.status === "approved") {
+      setPaymentDone(true);
+      setPaymentFailed(false);
+      eventSource?.close();
+      return;
+    }
+
+    if (data.status === "rejected" || data.status === "cancelled") {
+      setPaymentDone(false);
+      setPaymentFailed(true);
+      eventSource?.close();
+      return;
+    }
+
+    if (data.status === "pending" || data.status === "in_process") {
+      setPaymentDone(false);
+      setPaymentFailed(false);
+    }
+  }, []);
 
   useEffect(() => {
-    if (!currentPaymentId) return;
+    if (!currentPaymentId) return undefined;
 
-    const es = new EventSource(
-      `https://maleah-nonlaminated-kacie.ngrok-free.dev/events/${currentPaymentId}`
-    );
+    let closed = false;
+    const es = new EventSource(`${apiBaseUrl}/events/${currentPaymentId}`);
 
-    fetch(`https://maleah-nonlaminated-kacie.ngrok-free.dev/payment/${currentPaymentId}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === "approved") {
-          setStatusMessage("Pagamento aprovado!");
-          setPaymentDone(true);
-        }
-      });
+    fetch(`${apiBaseUrl}/payment/${currentPaymentId}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!closed) applyPaymentStatus(data, es);
+      })
+      .catch((err) => console.error("Erro ao consultar pagamento:", err));
 
     es.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-
-      if (data.status === "approved") {
-        setStatusMessage("Pagamento aprovado!");
-        setPaymentDone(true);
-        setPaymentFailed(false);
-        es.close();
-        return;
-      }
-
-      if (data.status === "rejected" || data.status === "cancelled") {
-        setStatusMessage("Pagamento recusado!");
-        setPaymentFailed(true);
-        setPaymentDone(false);
-        es.close();
-        return;
-      }
-
-      if (data.status === "pending" || data.status === "in_process") {
-        setStatusMessage("Pagamento aguardando confirmação do banco.");
-      }
+      applyPaymentStatus(JSON.parse(event.data), es);
     };
 
-    return () => es.close();
-  }, [currentPaymentId]);
+    es.onerror = (event) => {
+      console.error("Erro no canal de eventos do pagamento:", event);
+    };
 
-  const createPayment = async (data, type) => {
+    return () => {
+      closed = true;
+      es.close();
+    };
+  }, [applyPaymentStatus, currentPaymentId]);
+
+  useEffect(() => {
+    if (paymentDone && !paidCartCleared) {
+      clearCart();
+      setPaidCartCleared(true);
+    }
+  }, [clearCart, paidCartCleared, paymentDone]);
+
+  const createPayment = useCallback(async (data, type) => {
     setLoading(true);
     setStatusMessage(null);
     setPaymentFailed(false);
 
     try {
-      const res = await fetch("http://localhost:3001/create-payment", {
+      const res = await fetch(`${apiBaseUrl}/create-payment`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
-          transaction_amount: total,
+          transaction_amount: Number(total.toFixed(2)),
           description: "Compra Fight For Life",
+          cartItems,
+          user: user
+            ? {
+                uid: user.uid,
+                email: user.email,
+                displayName: user.displayName,
+              }
+            : null,
         }),
       });
 
       const result = await res.json();
-      console.log("RESULT:", result);
+
+      if (!res.ok) {
+        throw new Error(result?.error || "Erro ao processar pagamento");
+      }
 
       if (result.id) {
         setCurrentPaymentId(String(result.id));
       }
 
       if (type === "card") {
-        if (result.status === "approved") {
-          setStatusMessage("Pagamento aprovado!");
-          setPaymentDone(true);
-        } else if (result.status === "rejected") {
-          setStatusMessage("Pagamento recusado!");
-          setPaymentFailed(true);
-        } else {
-          setStatusMessage("Pagamento pendente. Aguardando confirmação.");
-        }
+        applyPaymentStatus({
+          status: result.status,
+          status_detail: result.status_detail,
+        });
       }
 
       if (type === "pix") {
         if (result.point_of_interaction) {
           setPixData(result.point_of_interaction.transaction_data);
-          setStatusMessage("PIX gerado. Aguardando pagamento.");
+          setStatusMessage("Pix gerado. Aguardando pagamento.");
           setPaymentDone(false);
         } else {
-          setStatusMessage("Falha ao gerar PIX.");
+          setStatusMessage("Falha ao gerar Pix.");
           setPaymentFailed(true);
         }
       }
@@ -126,7 +166,7 @@ const Checkout = () => {
     }
 
     setLoading(false);
-  };
+  }, [applyPaymentStatus, cartItems, total, user]);
 
   useEffect(() => {
     if (paymentDone) return;
@@ -136,7 +176,7 @@ const Checkout = () => {
         {
           payment_method_id: "pix",
           payer: {
-            email: "cliente@email.com",
+            email: user?.email || "cliente@email.com",
           },
         },
         "pix"
@@ -148,7 +188,7 @@ const Checkout = () => {
         {
           payment_method_id: "bolbradesco",
           payer: {
-            email: "cliente@email.com",
+            email: user?.email || "cliente@email.com",
             identification: {
               type: "CPF",
               number: "12345678909",
@@ -158,8 +198,7 @@ const Checkout = () => {
         "boleto"
       );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [method]);
+  }, [boletoUrl, createPayment, method, paymentDone, pixData, user?.email]);
 
   const handleCopyPix = () => {
     if (pixData?.qr_code) {
@@ -175,12 +214,13 @@ const Checkout = () => {
     setBoletoUrl(null);
     setPaymentDone(false);
     setCurrentPaymentId(null);
+    setPaidCartCleared(false);
   };
 
   return (
     <div className="checkout-container">
       <h2>Finalizar Compra</h2>
-      <h3>Total: R$ {total}</h3>
+      <h3>Total: R$ {total.toFixed(2)}</h3>
 
       <div className="tabs">
         <button
@@ -226,7 +266,8 @@ const Checkout = () => {
               <p>Gerando QR Code Pix...</p>
             </div>
           ) : (
-            pixData && !paymentFailed && (
+            pixData &&
+            !paymentFailed && (
               <div className="pix-box">
                 <h3>Escaneie o QR Code</h3>
                 <div className="pix-code-container">
@@ -251,13 +292,14 @@ const Checkout = () => {
           {loading && !boletoUrl && !paymentDone ? (
             <div className="loading">
               <div className="spinner" />
-              <p>Gerando Boleto...</p>
+              <p>Gerando boleto...</p>
             </div>
           ) : (
-            boletoUrl && !paymentFailed && (
+            boletoUrl &&
+            !paymentFailed && (
               <div className="boleto-box">
                 <a href={boletoUrl} target="_blank" rel="noreferrer">
-                  Abrir Boleto
+                  Abrir boleto
                 </a>
               </div>
             )
@@ -271,11 +313,7 @@ const Checkout = () => {
             textAlign: "center",
             marginTop: "20px",
             fontWeight: "bold",
-            color:
-              statusMessage.includes("sucesso") ||
-                statusMessage.includes("aprovado")
-                ? "green"
-                : "red",
+            color: paymentDone ? "green" : paymentFailed ? "red" : "#555",
           }}
         >
           {statusMessage}

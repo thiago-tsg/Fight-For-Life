@@ -1,16 +1,42 @@
-# React + Vite
+# Fight For Life
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacao React + Vite com loja, checkout Mercado Pago e Firebase.
 
-Currently, two official plugins are available:
+## Webhook Mercado Pago
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O backend de pagamento fica em `src/components/Pagamento/server.js` e expoe:
 
-## React Compiler
+- `POST /create-payment`
+- `POST /webhook`
+- `GET /payment/:paymentId`
+- `GET /events/:paymentId`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O webhook valida `x-signature` e `x-request-id` do Mercado Pago, consulta o pagamento na API oficial e persiste pedidos em `orders` e eventos em `webhook_events` no Firestore via Firebase Admin SDK.
 
-## Expanding the ESLint configuration
+## Variaveis de ambiente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Copie `.env.example` para `.env.local` e configure:
+
+- `VITE_MP_PUBLIC_KEY`: chave publica do Mercado Pago usada no frontend.
+- `VITE_API_BASE_URL`: URL publica HTTPS do backend em producao; deixe vazio no desenvolvimento local para usar o proxy do Vite.
+- `MP_ACCESS_TOKEN`: access token privado do Mercado Pago.
+- `MP_WEBHOOK_SECRET`: secret configurado no painel de webhooks do Mercado Pago.
+- `FIREBASE_SERVICE_ACCOUNT`: JSON, base64 do JSON ou caminho para o arquivo de service account do Firebase.
+- `PUBLIC_API_BASE_URL`: URL publica do backend para referencia de deploy.
+- `CORS_ORIGIN`: origem permitida para o frontend em producao.
+- `PORT`: porta do backend, padrao `3001`.
+
+## Desenvolvimento
+
+Em terminais separados:
+
+```bash
+npm run dev
+npm run dev:payment
+```
+
+Configure no painel do Mercado Pago a URL publica:
+
+```text
+https://seu-dominio.com/webhook
+```
