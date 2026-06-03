@@ -18,6 +18,7 @@ import Carrinho from './Loja/Carrinho.jsx';
 import Comprar from './Loja/Comprar.jsx';
 import Campeonatos from './Campeonatos.jsx';
 import AvaliacaoGrau from './AvaliacaoGrauKids.jsx';
+import Background from "./Background.jsx";
 
 import { useAuth } from '../firebase/AuthContext';
 import { CartProvider } from './Loja/CartContext.jsx';
@@ -46,6 +47,7 @@ const PrivateRoute = ({ children }) => {
 const App = () => {
   return (
     <CartProvider>
+      <Background />
       <Router>
         <ButtonWhats />
         <Relogio />
