@@ -1,7 +1,6 @@
 @import "../styles/Index.scss";
 
 .loja {
-
   // estrutura principal da loja, com sidebar e conteúdo
   .sidebar {
     position: sticky;
@@ -14,7 +13,7 @@
     }
 
     .category-name {
-      padding: .5rem 0;
+      padding: 0.5rem 0;
       cursor: pointer;
       position: relative;
       transition: 0.3s;
@@ -30,7 +29,7 @@
     }
 
     .subcategory-item {
-      padding: .3rem 0 .3rem .5rem;
+      padding: 0.3rem 0 0.3rem 0.5rem;
       cursor: pointer;
       transition: 0.3s;
 
@@ -132,6 +131,22 @@
   }
 }
 
+@media (max-width: 480px) {
+  .loja {
+    .loja-content {
+      .product-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      .product-image {
+        height: 200px;
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .loja {
     flex-direction: column;
@@ -146,29 +161,42 @@
 
 @media (max-width: 768px) {
   .loja {
-    padding: 2rem 0;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
 
     .sidebar {
-      overflow-x: auto;
-      white-space: nowrap;
-
+      width: 100%;
       padding: 1rem;
+      border-radius: 16px;
 
       .titulo {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
       }
 
       .category-name {
-        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+        border: 1px solid rgba($primary, 0.2);
+        border-radius: 999px;
+        font-size: 0.9rem;
       }
 
       .subcategory-item {
+        padding: 0.4rem 0.75rem;
         font-size: 0.85rem;
       }
     }
 
     .loja-content {
+      width: 100%;
+
       .product-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
@@ -176,28 +204,37 @@
     }
 
     .product-card {
-      border-radius: 18px;
+      border-radius: 16px;
 
       .product-image {
         height: 180px;
       }
 
+      .titulo,
+      .preco,
+      .buttons {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+
       .titulo {
-        font-size: 0.9rem;
-        min-height: 40px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        min-height: 2.7rem;
       }
 
       .preco {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .buttons {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding-bottom: 0.8rem;
 
         .btn-product {
-          width: 100%;
-          padding: 0.6rem;
-          font-size: 0.85rem;
+          padding: 0.7rem;
+          font-size: 0.8rem;
         }
       }
     }

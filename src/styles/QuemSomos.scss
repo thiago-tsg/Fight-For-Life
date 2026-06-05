@@ -46,14 +46,16 @@
 }
 
 @media (max-width: 768px) {
-  .quemsomos {
-    margin: 1rem;
+  .cg-quemsomos {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    margin: 0rem;
 
     .text-quemsomos {
       text-align: center;
 
       p {
-        text-align: left;
+        text-align: justify;
       }
     }
   }

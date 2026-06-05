@@ -5,6 +5,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import ProductList from "./ProductList";
 import ProductModal from "./ProductModal";
+import Efeito from "../EfeitoComponent";
 
 // Styles
 import "../../styles/Loja.scss";
@@ -36,13 +37,15 @@ const Loja = () => {
 
   return (
     <section className="loja flex container gap-lg">
-      <Sidebar
-        categoriesData={categoriesData}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        selectedSubcategory={selectedSubcategory}
-        setSelectedSubcategory={setSelectedSubcategory}
-      />
+      <Efeito>
+        <Sidebar
+          categoriesData={categoriesData}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          selectedSubcategory={selectedSubcategory}
+          setSelectedSubcategory={setSelectedSubcategory}
+        />
+      </Efeito>
 
       <div className="loja-content">
         <ProductList subcategory={selectedSubcategory} onClickProduct={handleClickProduct} />

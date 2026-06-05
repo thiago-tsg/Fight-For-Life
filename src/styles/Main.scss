@@ -124,7 +124,6 @@
       padding: 2rem;
 
       .form-contato {
-
         input,
         textarea {
           padding: 1rem;
@@ -162,12 +161,45 @@
 
 @media (max-width: 768px) {
   .main {
-    .cg-beneficios-main {
-      grid-template-columns: 1fr;
-    }
-
     .cg-hero-main {
       gap: 2rem;
+
+      .c-hero-main {
+        span, h1, p{
+          text-align: center;
+        }
+      }
+    }
+
+    .cg-beneficios-main {
+      grid-template-columns: 1fr;
+      padding-top: 1rem;
+
+      .beneficio-card {
+        padding: 1rem;
+
+        h3, p{
+          text-align: center;
+        }
+      }
+    }
+
+    .cg-cta-main {
+      padding: 2rem 0;
+    }
+
+    .cg-contato-main{
+      .text-form{
+        span, h2, p{
+          text-align: center;
+        }
+      }
+    }
+
+    .cg-mapa {
+      iframe {
+        height: 300px;
+      }
     }
   }
 }
