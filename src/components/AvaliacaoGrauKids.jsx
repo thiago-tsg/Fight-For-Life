@@ -4,12 +4,13 @@ import { db } from "../firebase/FirebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function AvaliacaoGrauKids() {
+  // estados
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
-
   const [step, setStep] = useState(0);
   const [resultadoFinal, setResultadoFinal] = useState(null);
 
+  // questionario
   const questionario = {
     azul: [
       "Demonstra respeito com adultos (professores, responsáveis)?",
@@ -41,7 +42,7 @@ export default function AvaliacaoGrauKids() {
   const [respostas, setRespostas] = useState({});
   const progresso = step / (cores.length + 1);
 
-  // ⭐ FORMATAÇÃO DO CPF
+  //FORMATAÇÃO DO CPF
   const formatarCPF = (valor) => {
     let v = valor.toUpperCase();
 
@@ -131,6 +132,12 @@ export default function AvaliacaoGrauKids() {
       <div className="cg-wizard">
         <h1 className="cg-title center">Avaliação do Aluno</h1>
 
+        <p className="cg-description">
+          Responda às perguntas para avaliar o desenvolvimento
+          comportamental e disciplinar do aluno dentro dos critérios
+          utilizados pela Fight4Life Kids.
+        </p>
+
         {/* Barra de progresso */}
         <div className="cg-progress-bar">
           <div className="cg-progress" style={{ width: `${progresso * 100}%` }}></div>
@@ -139,7 +146,12 @@ export default function AvaliacaoGrauKids() {
         {/* Indicador de cores */}
         <div className="cg-steps-indicator space-between">
           {cores.map((cor, i) => (
-            <div key={cor} className={`cg-step ${step - 1 === i ? "active" : ""} cor-${cor}`}></div>
+            <div
+              key={cor}
+              className={`cg-step ${step - 1 === i ? "active" : ""} cor-${cor}`}
+            >
+              {i + 1}
+            </div>
           ))}
         </div>
 

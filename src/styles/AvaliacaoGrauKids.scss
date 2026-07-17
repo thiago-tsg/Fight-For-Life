@@ -1,195 +1,306 @@
 @import "./Index.scss";
 
-/* AvaliacaoGrauKids.scss */
 $azul: #3498db;
 $vermelho: #e74c3c;
-$amarelo: #f1c40f;
+$amarelo: #f39c12;
 $verde: #2ecc71;
-$cinza-claro: #b5bbbd91;
-$cinza-escuro: #161818;
-$branco: #fff;
-$transicao: 0.3s ease;
 
 .cg-avaliacao-kids {
+  padding: 4rem 0;
+
   .cg-wizard {
-    background: rgba(255, 255, 255, 0.08); // bem suave
-    backdrop-filter: blur(20px); // desfoque mais forte
-    -webkit-backdrop-filter: blur(20px);
+    max-width: 900px;
+    margin: 0 auto;
 
-    border: 1px solid rgba(255, 255, 255, 0.25); // borda vidro
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); // sombra para destacar
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    padding: 2rem;
-    border-radius: 1rem;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 24px;
+
+    padding: 2.5rem;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 
     .cg-title {
-      margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
     }
 
-    //Barra de processo
+    .cg-description {
+      text-align: center;
+      color: #cfcfcf;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* =====================
+       BARRA DE PROGRESSO
+    ===================== */
+
     .cg-progress-bar {
       width: 100%;
-      height: 1rem;
-      background: $cinza-claro;
-      border-radius: 0.5rem;
-      margin-bottom: 1.5rem;
+      height: 12px;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      border-radius: 999px;
+      overflow: hidden;
+
+      margin-bottom: 2rem;
 
       .cg-progress {
         height: 100%;
-        background: $verde;
-        width: 0;
-        transition: width $transicao;
+
+        background: linear-gradient(
+          90deg,
+          $primary,
+          $secondary
+        );
+
+        transition: width 0.4s ease;
       }
     }
 
-    //Indicador de cores
+    /* =====================
+       INDICADOR DE ETAPAS
+    ===================== */
+
     .cg-steps-indicator {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 2rem;
 
       .cg-step {
-        width: 20px;
-        height: 20px;
+        width: 42px;
+        height: 42px;
+
         border-radius: 50%;
-        background: $cinza-claro;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        font-weight: 700;
+
+        transition: all 0.3s ease;
+
         &.active {
-          transform: scale(1.3);
+          transform: scale(1.15);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
         }
+
         &.cor-azul {
           background: $azul;
         }
+
         &.cor-vermelho {
           background: $vermelho;
         }
+
         &.cor-amarelo {
           background: $amarelo;
         }
+
         &.cor-verde {
           background: $verde;
         }
-        transition: all $transicao;
       }
     }
 
-    //Formulário passo a passo
-    .cg-card {
-      background: $cinza-claro;
-      padding: 2rem;
-      border-radius: 1rem;
-      opacity: 1;
-      transition: opacity $transicao;
+    /* =====================
+       CARD
+    ===================== */
 
-      &.fade {
-        animation: fadeIn 0.5s ease-in-out;
-      }
+    .cg-card {
+      background: rgba(255, 255, 255, 0.04);
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      border-radius: 20px;
+
+      padding: 2rem;
+
+      animation: fadeIn 0.4s ease;
 
       .cg-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: $tertiary;
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
       }
 
       .cg-label {
-        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
         margin-bottom: 1.5rem;
 
-        .cg-input {
-          margin-top: 0.5rem;
-          padding: 0.5rem 1rem;
-          border-radius: 0.5rem;
-          border: 1px solid $cinza-escuro;
-          font-size: 1rem;
+        font-weight: 500;
+      }
+
+      /* INPUTS */
+
+      .cg-input,
+      .cg-select {
+        width: 100%;
+
+        padding: 1rem;
+
+        border-radius: 12px;
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        background: rgba(255, 255, 255, 0.08);
+
+        color: #fff;
+
+        font-size: 1rem;
+
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+
+          border-color: $primary;
+
+          box-shadow: 0 0 15px rgba($primary, 0.3);
         }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.55);
+        }
+      }
+
+      /* SELECT */
+
+      .cg-select {
+        cursor: pointer;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+
+        padding-right: 3rem;
+      }
+
+      /* CORREÇÃO DAS OPTIONS */
+
+      .cg-select option {
+        background: #1b1b1b;
+        color: #ffffff;
       }
 
       .cg-question {
         margin-bottom: 1.5rem;
 
         .cg-question-text {
-          margin-bottom: 0.5rem;
-          color: $tertiary;
-        }
-
-        .cg-select {
-          padding: 0.5rem 1rem;
-          border-radius: 0.5rem;
-          border: 1px solid $cinza-escuro;
-          width: 100%;
-          font-size: 1rem;
-          transition: border $transicao;
-
-          &:focus {
-            outline: none;
-            border-color: $azul;
-            cursor: pointer;
-          }
+          margin-bottom: 0.7rem;
+          line-height: 1.5;
         }
       }
 
       .cg-nav {
-        margin-top: 1rem;
-      }
-
-      &.cg-result {
-        text-align: center;
-
-        .cg-result-item {
-          font-size: 1.2rem;
-          margin: 0.5rem 0;
-        }
-      }
-
-      &.cor-azul {
-        border-left: 5px solid $azul;
-      }
-      &.cor-vermelho {
-        border-left: 5px solid $vermelho;
-      }
-      &.cor-amarelo {
-        border-left: 5px solid $amarelo;
-      }
-      &.cor-verde {
-        border-left: 5px solid $verde;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 2rem;
       }
     }
 
-    //Geral
-    .cg-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition:
-        background $transicao,
-        transform $transicao;
+    /* =====================
+       RESULTADO
+    ===================== */
 
-      &.cg-btn-next {
-        background: $azul;
-        color: $branco;
+    .cg-result {
+      text-align: center;
+
+      .cg-result-item {
+        margin-bottom: 1rem;
+
+        padding: 1rem;
+
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        font-size: 1.05rem;
+
+        strong {
+          color: $primary;
+        }
       }
-      &.cg-btn-back {
-        background: $cinza-escuro;
-        color: $branco;
-      }
-      &.cg-btn-send {
-        background: $verde;
-        color: $branco;
-      }
+    }
+
+    /* =====================
+       BOTÕES
+    ===================== */
+
+    .cg-btn {
+      padding: 1rem 1.5rem;
+
+      border: none;
+      border-radius: 12px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: all 0.3s ease;
 
       &:hover {
-        transform: translateY(-2px);
-        opacity: 0.9;
+        transform: translateY(-3px);
       }
+
+      &.cg-btn-next {
+        background: $primary;
+        color: white;
+      }
+
+      &.cg-btn-back {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+      }
+
+      &.cg-btn-send {
+        background: $verde;
+        color: white;
+      }
+    }
+
+    .cor-azul {
+      border-left: 5px solid $azul;
+    }
+
+    .cor-vermelho {
+      border-left: 5px solid $vermelho;
+    }
+
+    .cor-amarelo {
+      border-left: 5px solid $amarelo;
+    }
+
+    .cor-verde {
+      border-left: 5px solid $verde;
     }
   }
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(15px);
   }
-  100% {
+
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -197,10 +308,30 @@ $transicao: 0.3s ease;
 
 @media (max-width: 768px) {
   .cg-avaliacao-kids {
-    padding: 1rem;
+    padding: 2rem 1rem;
 
     .cg-wizard {
-      padding: 1rem;
+      padding: 1.5rem;
+
+      .cg-card {
+        padding: 1.2rem;
+      }
+
+      .cg-nav {
+        flex-direction: column;
+
+        .cg-btn {
+          width: 100%;
+        }
+      }
+
+      .cg-steps-indicator {
+        .cg-step {
+          width: 34px;
+          height: 34px;
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 }

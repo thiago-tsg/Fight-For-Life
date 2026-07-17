@@ -1,10 +1,16 @@
 // React
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Styles
 import "../styles/Main.scss";
 
+// Components
+import Efeito from "./EfeitoComponent";
+
 const Main = () => {
+  const navigate = useNavigate();
+
   // Estado para armazenar os dados do formulário
   const [formData, setFormData] = useState({
     nome: "",
@@ -87,148 +93,160 @@ const Main = () => {
 
       {/* HERO */}
       <section className="cg-hero-main grid2col gap-xl">
-        <div className="c-hero-main flex-colum gap-md">
-          <span>JIU JITSU • MUAY THAI • BOXE • NOGI</span>
-
-          <h1>
-            Transforme seu corpo,
-            <br />
-            fortaleça sua mente.
-          </h1>
-
-          <p>
-            Treine com professores qualificados em um ambiente
-            preparado para desenvolver disciplina, condicionamento
-            físico, autoconfiança e defesa pessoal.
-          </p>
-
-          <div className="c-hero-buttons flex gap-md">
-            <button className="btn">
-              Aula Experimental
-            </button>
-
-            <button className="btn">
-              Conheça os Planos
-            </button>
+        <Efeito>
+          <div className="c-hero-main flex-colum gap-md">
+            <span>JIU JITSU • MUAY THAI • BOXE • NOGI • MMA</span>
+            <h1>
+              Transforme seu corpo,
+              <br />
+              fortaleça sua mente.
+            </h1>
+            <p>
+              Treine com professores qualificados em um ambiente
+              preparado para desenvolver disciplina, condicionamento
+              físico, autoconfiança e defesa pessoal.
+            </p>
+            <div className="c-hero-buttons flex gap-md">
+              <button
+                className="btn"
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma aula experimental.",
+                    "_blank"
+                  )
+                }
+              >
+                Aula Experimental
+              </button>
+              <button
+                className="btn"
+                onClick={() => navigate("/planos")}
+              >
+                Conheça os Planos
+              </button>
+            </div>
           </div>
-        </div>
+        </Efeito>
 
-        <div className="hero-image">
-          <img
-            src="/foto-main-1.jpg"
-            alt="Treinamento de Jiu Jitsu"
-          />
-        </div>
+        <Efeito>
+          <div className="hero-image">
+            <img
+              src="/foto-main-1.jpg"
+              alt="Treinamento de Jiu Jitsu"
+            />
+          </div>
+        </Efeito>
       </section>
 
       {/* BENEFÍCIOS */}
-      <section className="cg-beneficios-main grid4col gap-md">
-        <div className="beneficio-card">
-          <h3>Respeito</h3>
-          <p>
-            Aprenda a respeitar colegas, professores e adversários.
-          </p>
-        </div>
-
-        <div className="beneficio-card">
-          <h3>Disciplina</h3>
-          <p>
-            Desenvolva foco, dedicação e constância.
-          </p>
-        </div>
-
-        <div className="beneficio-card">
-          <h3>Confiança</h3>
-          <p>
-            Ganhe segurança dentro e fora dos tatames.
-          </p>
-        </div>
-
-        <div className="beneficio-card">
-          <h3>Coragem</h3>
-          <p>
-            Supere desafios e evolua diariamente.
-          </p>
-        </div>
-      </section>
+      <Efeito>
+        <section className="cg-beneficios-main grid4col gap-md">
+          <div className="beneficio-card">
+            <h3>Respeito</h3>
+            <p>
+              Aprenda a respeitar colegas, professores e adversários.
+            </p>
+          </div>
+          <div className="beneficio-card">
+            <h3>Disciplina</h3>
+            <p>
+              Desenvolva foco, dedicação e constância.
+            </p>
+          </div>
+          <div className="beneficio-card">
+            <h3>Confiança</h3>
+            <p>
+              Ganhe segurança dentro e fora dos tatames.
+            </p>
+          </div>
+          <div className="beneficio-card">
+            <h3>Coragem</h3>
+            <p>
+              Supere desafios e evolua diariamente.
+            </p>
+          </div>
+        </section>
+      </Efeito>
 
       {/* CTA */}
-      <section className="cg-cta-main">
-        <h2>
-          Sua primeira aula pode ser o início de uma transformação.
-        </h2>
-
-        <p>
-          Venha conhecer nossa estrutura e treinar com nossa equipe.
-        </p>
-      </section>
+      <Efeito>
+        <section className="cg-cta-main">
+          <h2>
+            Sua primeira aula pode ser o início de uma transformação.
+          </h2>
+          <p>
+            Venha conhecer nossa estrutura e treinar com nossa equipe.
+          </p>
+        </section>
+      </Efeito>
 
       {/* FORMULÁRIO */}
       <section className="cg-contato-main grid2col gap-xl">
-        <div className="text-form flex-colum">
-          <span>Duvidas ?</span>
+        <Efeito>
+          <div className="text-form flex-colum">
+            <span>Duvidas ?</span>
+            <h2>Nos mande um email</h2>
+            <p>
+              além do nosso WhatsApp 24h, você pode entrar em contato conosco através do formulário ao lado. Estamos prontos para responder suas perguntas e ajudar no que for necessário.
+            </p>
+          </div>
+        </Efeito>
 
-          <h2>Nos mande um email</h2>
-
-          <p>
-            além do nosso WhatsApp 24h, você pode entrar em contato conosco através do formulário ao lado. Estamos prontos para responder suas perguntas e ajudar no que for necessário.
-          </p>
-        </div>
-
-        <div className="cg-form">
-          <form
-            onSubmit={handleSubmit}
-            className="form-contato flex-colum gap-md"
-          >
-            <input
-              type="text"
-              name="nome"
-              placeholder="Seu nome"
-              value={formData.nome}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Seu e-mail"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-            <textarea
-              name="mensagem"
-              rows="5"
-              placeholder="Digite sua mensagem..."
-              value={formData.mensagem}
-              onChange={handleChange}
-              required
-            />
-
-            <button
-              type="submit"
-              className="btn"
+        <Efeito>
+          <div className="cg-form">
+            <form
+              onSubmit={handleSubmit}
+              className="form-contato flex-colum gap-md"
             >
-              Enviar Mensagem
-            </button>
-          </form>
-        </div>
+              <input
+                type="text"
+                name="nome"
+                placeholder="Seu nome"
+                value={formData.nome}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu e-mail"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                name="mensagem"
+                rows="5"
+                placeholder="Digite sua mensagem..."
+                value={formData.mensagem}
+                onChange={handleChange}
+                required
+              />
+              <button
+                type="submit"
+                className="btn"
+              >
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </Efeito>
       </section>
 
       {/* MAPA */}
-      <section className="cg-mapa">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!4v1763492853172!6m8!1m7!1sBHr9iXxsybv5OLAGJPndtg!2m2!1d-23.51703523873262!2d-46.51618812175126!3f215.29421746319335!4f3.9289814036784634!5f0.7820865974627469"
-          width="100%"
-          height="500"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          title="Mapa Academia"
-        />
-      </section>
+      <Efeito>
+        <section className="cg-mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1763492853172!6m8!1m7!1sBHr9iXxsybv5OLAGJPndtg!2m2!1d-23.51703523873262!2d-46.51618812175126!3f215.29421746319335!4f3.9289814036784634!5f0.7820865974627469"
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            title="Mapa Academia"
+          />
+        </section>
+      </Efeito>
     </main>
   );
 };

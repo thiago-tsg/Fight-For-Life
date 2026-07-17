@@ -1,0 +1,159 @@
+@import "./Index.scss";
+
+.background-site {
+  position: fixed;
+  inset: 0;
+
+  z-index: -999;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  background: #000;
+
+  /* =====================
+     LUZES DE ARENA
+  ===================== */
+
+  .arena-light {
+    position: absolute;
+
+    top: -500px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 1200px;
+    height: 1200px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+      circle,
+      rgba($primary, 0.08),
+      transparent 70%
+    );
+
+    filter: blur(140px);
+  }
+
+  .arena-light-bottom {
+    position: absolute;
+
+    bottom: -700px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 1000px;
+    height: 1000px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+      circle,
+      rgba($primary, 0.05),
+      transparent 70%
+    );
+
+    filter: blur(140px);
+  }
+
+  /* =====================
+     GLOWS LATERAIS
+  ===================== */
+
+  .bg-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+  }
+
+  .bg-glow-1 {
+    width: 500px;
+    height: 500px;
+
+    background: rgba($primary, 0.15);
+
+    top: -150px;
+    left: -150px;
+  }
+
+  .bg-glow-2 {
+    width: 600px;
+    height: 600px;
+
+    background: rgba($primary, 0.12);
+
+    bottom: -250px;
+    right: -250px;
+  }
+
+  /* =====================
+     TEXTURA TATAME
+  ===================== */
+
+  .tatame {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 0,
+        rgba(255, 255, 255, 0.03) 3px,
+        transparent 3px,
+        transparent 40px
+      );
+
+    opacity: 0.8;
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px) {
+  .background-site {
+
+    .arena-light {
+      width: 700px;
+      height: 700px;
+
+      top: -300px;
+
+      opacity: 0.7;
+    }
+
+    .arena-light-bottom {
+      width: 600px;
+      height: 600px;
+
+      bottom: -350px;
+
+      opacity: 0.5;
+    }
+
+    .bg-glow {
+      filter: blur(80px);
+    }
+
+    .bg-glow-1 {
+      width: 250px;
+      height: 250px;
+    }
+
+    .bg-glow-2 {
+      width: 300px;
+      height: 300px;
+    }
+
+    .tatame {
+      opacity: 0.3;
+    }
+  }
+}

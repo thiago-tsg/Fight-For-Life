@@ -10,6 +10,8 @@ export default defineConfig({
     proxy: {
       "/events": "http://localhost:3001",
       "/create-payment": "http://localhost:3001",
+      "/payment": "http://localhost:3001",
+      "/webhook": "http://localhost:3001",
     },
   },
 });
