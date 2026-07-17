@@ -1,16 +1,213 @@
-# React + Vite
+# 🥋 Fight For Life
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Plataforma web e mobile para gestão, acompanhamento e experiência dos alunos
 
-Currently, two official plugins are available:
+🔗 **Demonstração:**  
+Em desenvolvimento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📸 Prévia
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Prévia do Projeto](./preview.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# ✨ Sobre o projeto
+
+O **Fight For Life** é uma plataforma desenvolvida para modernizar a experiência dos alunos e otimizar a gestão da academia.
+
+Mais do que um site institucional, o projeto reúne **área do aluno, loja online, autenticação, gerenciamento de dados e futuramente um aplicativo mobile completo**, centralizando diversas funcionalidades em um único ecossistema.
+
+O objetivo é transformar a relação entre academia e aluno através da tecnologia.
+
+---
+
+# 🎯 Objetivos
+
+Desenvolver uma plataforma capaz de:
+
+- melhorar a experiência dos alunos
+- facilitar o acesso às informações da academia
+- centralizar serviços em um único sistema
+- oferecer uma loja integrada
+- permitir expansão contínua de novas funcionalidades
+- disponibilizar versão web e aplicativo mobile
+
+---
+
+# 💡 Funcionalidades atuais
+
+- 🥋 Site institucional completo
+- 👤 Área do aluno
+- 🔐 Sistema de autenticação
+- 🛒 Loja virtual integrada
+- 💳 Integração com gateway de pagamento
+- 📦 Consumo de APIs externas
+- ☁️ Banco de dados em tempo real
+- 📱 Layout totalmente responsivo
+
+---
+
+# 🚧 Funcionalidades em desenvolvimento
+
+O projeto continua em evolução.
+
+Entre as próximas funcionalidades estão:
+
+- 📲 Aplicativo React Native
+- 📅 Agendamento de aulas
+- 📈 Acompanhamento de evolução
+- 🏆 Histórico de treinos
+- 🎯 Metas pessoais
+- 📊 Dashboard do aluno
+- 💬 Comunicação entre academia e alunos
+- 🔔 Sistema de notificações
+- 📷 Upload de documentos e imagens
+- 🎖️ Sistema de graduação
+- 📦 Histórico de compras
+- ❤️ Área personalizada do aluno
+
+---
+
+# ⚙️ Arquitetura
+
+O projeto utiliza uma arquitetura moderna baseada em componentes reutilizáveis e integração entre frontend, backend e serviços externos.
+
+### Front-end
+
+- React
+- Vite
+- React Router
+- SCSS
+- React Hooks
+
+### Back-end
+
+- Node.js
+- API REST
+- Integração com serviços externos
+- Regras de negócio centralizadas
+
+### Banco de Dados
+
+- Firebase Authentication
+- Cloud Firestore
+
+### Pagamentos
+
+- Integração com gateway de pagamento
+- Consumo de APIs financeiras
+- Processamento de pedidos
+
+---
+
+# 🧠 Destaques técnicos
+
+### 🔐 Autenticação
+
+- Login seguro com Firebase Authentication
+- Controle de sessão
+- Proteção de rotas
+- Gerenciamento de usuários
+
+### 🛒 E-commerce
+
+- Loja integrada
+- Catálogo de produtos
+- Carrinho de compras
+- Checkout
+- Integração com pagamentos
+
+### ⚡ Performance
+
+- Componentização
+- Lazy Loading
+- Código organizado
+- Navegação SPA
+- Estrutura escalável
+
+### ☁️ Integração
+
+- Consumo de APIs
+- Banco de dados em tempo real
+- Comunicação entre frontend e backend
+
+---
+
+# 📱 Aplicativo Mobile
+
+O projeto também contará com uma versão em **React Native**, oferecendo uma experiência completa para os alunos.
+
+Entre os recursos planejados:
+
+- Login
+- Área do aluno
+- Histórico de treinos
+- Evolução
+- Agendamentos
+- Loja
+- Notificações
+- Perfil
+- Pagamentos
+
+---
+
+# 🛠️ Stack Tecnológica
+
+## Front-end
+
+- React
+- Vite
+- JavaScript
+- SCSS
+- React Router
+
+## Back-end
+
+- Node.js
+
+## Banco de Dados
+
+- Firebase
+- Firestore
+- Firebase Authentication
+
+## APIs
+
+- REST API
+- Gateway de Pagamentos
+
+## Mobile
+
+- React Native (Em desenvolvimento)
+
+---
+
+# 📈 Status do Projeto
+
+🚧 Em desenvolvimento ativo
+
+Novas funcionalidades estão sendo implementadas continuamente, com foco em escalabilidade, desempenho e experiência do usuário.
+
+---
+
+# 🚀 Como executar
+
+```bash
+git clone https://github.com/seu-usuario/fight-for-life.git
+
+cd fight-for-life
+
+npm install
+
+npm run dev
+```
+
+---
+
+# 👨‍💻 Desenvolvedor
+
+Desenvolvido por **Thiago SG**
+
+Especializado em desenvolvimento Full Stack utilizando React, Node.js, Firebase e React Native, criando aplicações modernas, escaláveis e focadas na experiência do usuário.
