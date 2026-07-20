@@ -3,6 +3,10 @@ import "../styles/Footer.scss";
 
 // Imagens
 import logo from "../assets/logo-dourado.png";
+import Insta from "../assets/icon/instagram.svg";
+import TikTok from "../assets/icon/tiktok.svg";
+import Facebook from "../assets/icon/facebook.svg";
+import X from "../assets/icon/x.svg";
 
 // Components
 import Efeito from "./EfeitoComponent";
@@ -26,26 +30,26 @@ const Footer = () => {
             <div className="footer-social flex gap-md">
               <a href="#">
                 <img
-                  src="/icon/instagram.svg"
+                  src={Insta}
                   alt="Instagram"
                 />
               </a>
               <a href="#">
                 <img
-                  src="/icon/facebook.svg"
+                  src={Facebook}
                   alt="Facebook"
                 />
               </a>
               <a href="#">
                 <img
-                  src="/icon/tiktok.svg"
+                  src={TikTok}
                   alt="TikTok"
                 />
               </a>
               <a href="#">
                 <img
-                  src="/icon/youtube.svg"
-                  alt="YouTube"
+                  src={X}
+                  alt="X"
                 />
               </a>
             </div>

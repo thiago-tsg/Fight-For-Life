@@ -1,22 +1,31 @@
+//React
 import React, {
   useState,
   useEffect,
   useRef,
 } from "react";
-
 import {
   Modal,
   Box,
   Typography,
   IconButton,
 } from "@mui/material";
-
 import CloseIcon from "@mui/icons-material/Close";
 import { v4 as uuidv4 } from "uuid";
 
+//Components
 import { useCart } from "./CartContext";
 
+//Styles
 import "../../styles/ProductModal.scss";
+
+// Imagens
+import Link from "../../assets/icon/link.svg";
+import Facebook from "../../assets/icon/facebook.svg";
+import X from "../../assets/icon/x.svg";
+import Whats from "../../assets/icon/whatsapp.svg";
+import Insta from "../../assets/icon//instagram.svg";
+import TikTok from "../../assets/icon/tiktok.svg";
 
 
 const colorMap = {
@@ -330,7 +339,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/link.svg"
+                    src={Link}
                     alt="Copiar link"
                   />
                 </button>
@@ -342,7 +351,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/facebook.svg"
+                    src={Facebook}
                     alt="Facebook"
                   />
                 </button>
@@ -354,7 +363,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/x.svg"
+                    src={X}
                     alt="X"
                   />
                 </button>
@@ -366,7 +375,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/whatsapp.svg"
+                    src={Whats}
                     alt="WhatsApp"
                   />
                 </button>
@@ -378,7 +387,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/instagram.svg"
+                    src={Insta}
                     alt="Instagram"
                   />
                 </button>
@@ -390,7 +399,7 @@ const ProductModal = ({ open, onClose, product }) => {
                   }
                 >
                   <img
-                    src="/icon/tiktok.svg"
+                    src={TikTok}
                     alt="TikTok"
                   />
                 </button>

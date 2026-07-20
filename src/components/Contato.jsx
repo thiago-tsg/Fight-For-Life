@@ -4,6 +4,12 @@ import "../styles/Contato.scss";
 // Components
 import Efeito from "./EfeitoComponent";
 
+//Imagens
+import Insta from "../assets/icon/instagram.svg";
+import TikTok from "../assets/icon/tiktok.svg";
+import Facebook from "../assets/icon/facebook.svg";
+import X from "../assets/icon/x.svg";
+
 const Contato = () => {
   return (
     <section className="contato container">
@@ -69,16 +75,24 @@ const Contato = () => {
               <h4>Siga-nos</h4>
               <div className="flex gap-md">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <img src="/icon/facebook.svg" alt="Facebook" />
+                  <img
+                    src={Facebook}
+                    alt="Facebook" />
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <img src="/icon/instagram.svg" alt="Instagram" />
+                  <img
+                    src={Insta}
+                    alt="Instagram" />
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <img src="/icon/tiktok.svg" alt="TikTok" />
+                  <img
+                    src={TikTok}
+                    alt="TikTok" />
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  <img src="/icon/youtube.svg" alt="YouTube" />
+                  <img
+                    src={X}
+                    alt="X" />
                 </a>
               </div>
             </div>

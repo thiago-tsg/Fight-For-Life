@@ -8,6 +8,9 @@ import "../styles/Main.scss";
 // Components
 import Efeito from "./EfeitoComponent";
 
+// Imagens
+import Foto1main from "../assets/foto-main-1.jpg";
+
 const Main = () => {
   const navigate = useNavigate();
 
@@ -131,7 +134,7 @@ const Main = () => {
         <Efeito>
           <div className="hero-image">
             <img
-              src="/foto-main-1.jpg"
+              src={Foto1main}
               alt="Treinamento de Jiu Jitsu"
             />
           </div>

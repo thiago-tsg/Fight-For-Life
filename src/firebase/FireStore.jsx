@@ -3,9 +3,6 @@ import { getFirestore, doc, setDoc, getDoc  } from "firebase/firestore";
 import { app } from "./FirebaseConfig";
 
 export const db = getFirestore(app);
-
-console.log("📁 FireStore carregado! app.options:", app?.options);
-
 export const createUserDocument = async (user) => {
     if (!user) return;
 
