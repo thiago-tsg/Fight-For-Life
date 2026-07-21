@@ -2,7 +2,7 @@
 import "../styles/Header.scss";
 
 // Imagens
-import header from "../assets/header.jpg";
+import header from "../assets/header.webp";
 
 // React
 import { useNavigate } from "react-router-dom";
@@ -31,9 +31,7 @@ const Header = () => {
           <p>
             A <span>Fight4Life</span> é uma academia especializada em
             artes marciais, focada no desenvolvimento físico, mental e
-            técnico dos alunos através do <span>Jiu Jitsu</span>,
-            <span> Muay Thai</span>, <span>Boxe</span> e
-            <span> NoGi</span>.
+            técnico dos alunos através das <span>Artes marciais</span>.
           </p>
           {/* Botões */}
           <div className="hero-buttons flex gap-md">
@@ -58,15 +56,15 @@ const Header = () => {
           {/* Estatísticas */}
           <div className="hero-stats flex gap-xl">
             <div>
-              <h3>+500</h3>
+              <h3>+100</h3>
               <span>Alunos</span>
             </div>
             <div>
-              <h3>10+</h3>
+              <h3>4+</h3>
               <span>Anos</span>
             </div>
             <div>
-              <h3>4</h3>
+              <h3>5</h3>
               <span>Modalidades</span>
             </div>
           </div>

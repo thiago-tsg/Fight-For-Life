@@ -2,7 +2,7 @@
 import "../styles/Footer.scss";
 
 // Imagens
-import logo from "../assets/logo-dourado.png";
+import logo from "../assets/logo-dourado.webp";
 import Insta from "../assets/icon/instagram.svg";
 import TikTok from "../assets/icon/tiktok.svg";
 import Facebook from "../assets/icon/facebook.svg";

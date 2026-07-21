@@ -9,7 +9,7 @@ import "../styles/Main.scss";
 import Efeito from "./EfeitoComponent";
 
 // Imagens
-import Foto1main from "../assets/foto-main-1.jpg";
+import Foto1main from "../assets/foto-main-1.webp";
 
 const Main = () => {
   const navigate = useNavigate();

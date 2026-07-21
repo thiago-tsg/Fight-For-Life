@@ -14,7 +14,7 @@ import { db } from "../firebase/FireStore";
 import "../styles/Menu.scss";
 
 // Imagens
-import logo from "../assets/logo-dourado.png";
+import logo from "../assets/logo-dourado.webp";
 
 const Menu = () => {
   // States
