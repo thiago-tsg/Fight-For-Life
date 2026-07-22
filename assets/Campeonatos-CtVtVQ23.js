@@ -1,1 +1,0 @@
-import{j as t}from"./index-geXtrTqZ.js";const e=()=>t.jsx("div",{style:{width:"100%",height:"100vh"},children:t.jsx("iframe",{src:"https://soucompetidor.com.br/pt-br/eventos/todos-os-eventos/novos/?modalidade=1&pais=1",width:"100%",height:"100%",style:{border:"none"},title:"Campeonatos"})});export{e as default};
