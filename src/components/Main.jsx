@@ -7,6 +7,7 @@ import "../styles/Main.scss";
 
 // Components
 import Efeito from "./EfeitoComponent";
+import Mapa from "./Mapa";
 
 // Imagens
 import Foto1main from "../assets/foto-main-1.webp";
@@ -238,17 +239,7 @@ const Main = () => {
 
       {/* MAPA */}
       <Efeito>
-        <section className="cg-mapa">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1763492853172!6m8!1m7!1sBHr9iXxsybv5OLAGJPndtg!2m2!1d-23.51703523873262!2d-46.51618812175126!3f215.29421746319335!4f3.9289814036784634!5f0.7820865974627469"
-            width="100%"
-            height="500"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            title="Mapa Academia"
-          />
-        </section>
+        <Mapa />
       </Efeito>
     </main>
   );

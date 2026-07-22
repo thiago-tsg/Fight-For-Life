@@ -3,6 +3,7 @@ import "../styles/Contato.scss";
 
 // Components
 import Efeito from "./EfeitoComponent";
+import Mapa from "./Mapa";
 
 //Imagens
 import Insta from "../assets/icon/instagram.svg";
@@ -103,16 +104,7 @@ const Contato = () => {
       <Efeito>
         <section className="mapa-contato">
           <h3 className="center">Onde Estamos</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1763531925570!6m8!1m7!1sBHr9iXxsybv5OLAGJPndtg!2m2!1d-23.51703523873262!2d-46.51618812175126!3f217.9705832142205!4f-4.852004459506389!5f0.4000000000000002"
-            width="100%"
-            height="500"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-            title="Mapa Academia"
-          />
+          <Mapa />
         </section>
       </Efeito>
     </section>
